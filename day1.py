@@ -10,3 +10,21 @@ print("Battery Level:", battery_level, "%")
 print("Speed:", speed, "m/s")
 print("Is Moving:", is_moving)
 print("Obstacle Distance:", obstacle_distance, "meters")  
+
+#Robotic decision logic
+if obstacle_distance < 0.5:
+    print("Stop !! Obstacle too close")
+elif obstacle_distance < 1.0:
+    print("Warning: Slowing DOwn ..... ")
+    speed = 0.2
+else:
+    print("path clear. Moving at full speed")
+    is_moving = True
+
+if battery_level < 20:
+    print("Battery low. Returning to charging station.")
+    is_moving = False
+else:
+    print("Battery level sufficient. Continuing operation.")
+
+print("Final Speed:", speed, "m/s")
